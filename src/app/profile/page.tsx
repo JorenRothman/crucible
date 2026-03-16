@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { auth } from "@/features/auth";
+import { auth, requireAuth } from "@/features/auth/utils/auth";
 import { headers } from "next/headers";
 import { redirect } from "next/navigation";
 
@@ -13,13 +13,7 @@ async function signOut() {
 }
 
 export default async function ProfilePage() {
-  const session = await auth.api.getSession({
-    headers: await headers(),
-  });
-
-  if (!session) {
-    redirect("/login");
-  }
+  const session = await requireAuth();
 
   return (
     <div className="flex min-h-screen items-center justify-center">

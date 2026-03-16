@@ -1,9 +1,16 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { auth } from "@/features/auth";
-import { signOut } from "@/features/auth/client";
 import { headers } from "next/headers";
 import { redirect } from "next/navigation";
+
+async function signOut() {
+  "use server";
+  await auth.api.signOut({
+    headers: await headers(),
+  });
+  redirect("/login");
+}
 
 export default async function ProfilePage() {
   const session = await auth.api.getSession({
@@ -35,12 +42,7 @@ export default async function ProfilePage() {
               <img src={session.user.image} alt="Profile" className="h-16 w-16 rounded-full" />
             </div>
           )}
-          <form
-            action={async () => {
-              "use server";
-              await signOut();
-            }}
-          >
+          <form action={signOut}>
             <Button variant="destructive" className="w-full" type="submit">
               Sign out
             </Button>

@@ -71,3 +71,11 @@ Environment variables required:
 - `BETTER_AUTH_SECRET` - min 32 chars (generate with `openssl rand -base64 32`)
 - `BETTER_AUTH_URL` - e.g., `http://localhost:3000`
 - `NEXT_PUBLIC_BETTER_AUTH_URL` - client-side URL
+
+## Documentation
+
+- [Next.js](https://nextjs.org/docs) - React framework
+- [Better Auth](https://www.better-auth.com) - Authentication
+- [shadcn/ui](https://ui.shadcn.com/) - UI components
+- [Drizzle ORM](https://orm.drizzle.team/) - Database ORM
+- [Vercel React Best Practices](https://github.com/vercel-labs/agent-skills/tree/main/skills/react-best-practices) - Performance optimization

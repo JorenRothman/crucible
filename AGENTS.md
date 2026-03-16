@@ -38,3 +38,9 @@ Examples:
 - `feat: add login form`
 - `fix: handle timeout error`
 - `chore: update zod to v4`
+
+## Database (Drizzle)
+
+- `ddev pnpm drizzle-kit push` - Push schema to database
+- `ddev pnpm drizzle-kit generate` - Generate migrations
+- `ddev pnpm drizzle-kit migrate` - Run migrations

@@ -16,17 +16,20 @@ This project follows the [bulletproof-react](https://github.com/alan2207/bulletp
 
 ```
 src/
-├── app/           # Next.js App Router
+├── app/           # Next.js App Router (pages, layouts, API routes)
 ├── assets/        # Static assets
-├── components/    # Shared UI components
+├── components/    # Shared UI components (used across features)
 ├── config/        # Environment variables
-├── features/      # Feature-based modules
+├── features/      # Feature-based modules (everything for a feature)
+│   └── auth/     # auth feature: config, client, components, hooks, schema
 ├── hooks/        # Shared custom hooks
-├── lib/          # Reusable libraries
+├── lib/          # Reusable libraries (db, utils)
 ├── stores/       # Global state (Zustand)
 ├── types/        # Shared TypeScript types
 └── utils/        # Utility functions
 ```
+
+**Key principle:** Feature-specific code goes in `src/features/<feature>/`. Only truly shared components go in `src/components/`.
 
 ## Git
 

@@ -46,3 +46,15 @@ Schema is defined in `src/lib/db/schema/` (feature-based). Database client is ex
 - `ddev pnpm drizzle-kit push` - Push schema to database
 - `ddev pnpm drizzle-kit generate` - Generate migrations
 - `ddev pnpm drizzle-kit migrate` - Run migrations
+
+## Authentication (Better Auth)
+
+- Auth config: `src/lib/auth/index.ts`
+- Auth client: `src/lib/auth/client.ts`
+- Auth schema: `src/lib/db/schema/auth/`
+- API route: `src/app/api/auth/[...all]/route.ts`
+
+Environment variables required:
+- `BETTER_AUTH_SECRET` - min 32 chars (generate with `openssl rand -base64 32`)
+- `BETTER_AUTH_URL` - e.g., `http://localhost:3000`
+- `NEXT_PUBLIC_BETTER_AUTH_URL` - client-side URL

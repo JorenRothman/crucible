@@ -31,6 +31,16 @@ src/
 
 **Key principle:** Feature-specific code goes in `src/features/<feature>/`. Only truly shared components go in `src/components/`.
 
+## UI Components
+
+This project uses [shadcn/ui](https://ui.shadcn.com/) for UI components. Add new components with:
+
+```
+ddev pnpm shadcn add <component>
+```
+
+Components are stored in `src/components/ui/`.
+
 ## Git
 
 **Always use [Conventional Commits](https://www.conventionalcommits.org/)** for commit messages.

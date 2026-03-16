@@ -1,31 +1,17 @@
-"use client";
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { signOut, useSession } from "@/features/auth/client";
-import { useRouter } from "next/navigation";
-import { useEffect } from "react";
+import { auth } from "@/features/auth";
+import { signOut } from "@/features/auth/client";
+import { headers } from "next/headers";
+import { redirect } from "next/navigation";
 
-export default function ProfilePage() {
-  const { data: session, isPending } = useSession();
-  const router = useRouter();
-
-  useEffect(() => {
-    if (!isPending && !session) {
-      router.push("/login");
-    }
-  }, [session, isPending, router]);
-
-  if (isPending) {
-    return (
-      <div className="flex min-h-screen items-center justify-center">
-        <p>Loading...</p>
-      </div>
-    );
-  }
+export default async function ProfilePage() {
+  const session = await auth.api.getSession({
+    headers: await headers(),
+  });
 
   if (!session) {
-    return null;
+    redirect("/login");
   }
 
   return (
@@ -49,9 +35,16 @@ export default function ProfilePage() {
               <img src={session.user.image} alt="Profile" className="h-16 w-16 rounded-full" />
             </div>
           )}
-          <Button variant="destructive" className="w-full" onClick={() => signOut()}>
-            Sign out
-          </Button>
+          <form
+            action={async () => {
+              "use server";
+              await signOut();
+            }}
+          >
+            <Button variant="destructive" className="w-full" type="submit">
+              Sign out
+            </Button>
+          </form>
         </CardContent>
       </Card>
     </div>

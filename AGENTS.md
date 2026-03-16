@@ -41,6 +41,8 @@ Examples:
 
 ## Database (Drizzle)
 
+Schema is defined in `src/lib/db/schema/` (feature-based). Database client is exported from `src/lib/db/index.ts`.
+
 - `ddev pnpm drizzle-kit push` - Push schema to database
 - `ddev pnpm drizzle-kit generate` - Generate migrations
 - `ddev pnpm drizzle-kit migrate` - Run migrations

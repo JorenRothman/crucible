@@ -2,8 +2,6 @@ import { auth } from "@/features/auth";
 import { headers } from "next/headers";
 import { redirect } from "next/navigation";
 
-export { auth };
-
 export async function requireAuth() {
   const session = await auth.api.getSession({
     headers: await headers(),

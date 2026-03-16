@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { auth, requireAuth } from "@/features/auth/utils/auth";
+import { auth } from "@/features/auth";
+import { requireAuth } from "@/features/auth/utils/auth";
 import { headers } from "next/headers";
 import { redirect } from "next/navigation";
 

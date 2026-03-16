@@ -1,4 +1,4 @@
-import "./src/env";
+import "./src/config/env";
 
 import type { NextConfig } from "next";
 

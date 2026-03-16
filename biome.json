@@ -30,5 +30,27 @@
     "enabled": true,
     "clientKind": "git",
     "useIgnoreFile": true
-  }
+  },
+  "overrides": [
+    {
+      "include": ["src/config/env.ts"],
+      "linter": {
+        "rules": {
+          "nursery": {
+            "noProcessEnv": "off"
+          }
+        }
+      }
+    },
+    {
+      "include": ["**"],
+      "linter": {
+        "rules": {
+          "nursery": {
+            "noProcessEnv": "error"
+          }
+        }
+      }
+    }
+  ]
 }

@@ -27,3 +27,14 @@ src/
 ├── types/        # Shared TypeScript types
 └── utils/        # Utility functions
 ```
+
+## Git
+
+**Always use [Conventional Commits](https://www.conventionalcommits.org/)** for commit messages.
+
+Format: `<type>: <description>`
+
+Examples:
+- `feat: add login form`
+- `fix: handle timeout error`
+- `chore: update zod to v4`

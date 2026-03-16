@@ -49,8 +49,8 @@ Schema is defined in `src/lib/db/schema/` (feature-based). Database client is ex
 
 ## Authentication (Better Auth)
 
-- Auth config: `src/lib/auth/index.ts`
-- Auth client: `src/lib/auth/client.ts`
+- Auth config: `src/features/auth/index.ts`
+- Auth client: `src/features/auth/client.ts`
 - Auth schema: `src/lib/db/schema/auth/`
 - API route: `src/app/api/auth/[...all]/route.ts`
 

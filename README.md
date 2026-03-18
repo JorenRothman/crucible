@@ -1,4 +1,4 @@
-# Navo
+# Crucible
 
 A modern web application built with Next.js 16, featuring authentication, database integration, and a polished UI.
 

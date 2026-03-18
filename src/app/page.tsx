@@ -6,7 +6,7 @@ export default function Home() {
     <div className="min-h-screen flex flex-col">
       <header className="fixed top-0 left-0 right-0 z-50 px-6 py-4 flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-orange-500 to-amber-600 flex items-center justify-center">
+          <div className="w-8 h-8 rounded-lg bg-linear-to-br from-orange-500 to-amber-600 flex items-center justify-center">
             <Flame className="w-4 h-4 text-white" />
           </div>
           <span className="text-lg font-semibold tracking-tight">Crucible</span>
@@ -32,7 +32,7 @@ export default function Home() {
           <div className="space-y-6">
             <h1 className="text-5xl md:text-7xl font-bold tracking-tight">
               Build with{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-amber-500 to-orange-600">
+              <span className="text-transparent bg-clip-text bg-linear-to-r from-orange-400 via-amber-500 to-orange-600">
                 intention
               </span>
             </h1>

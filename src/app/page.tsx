@@ -38,7 +38,7 @@ function ForgeBackground() {
       </svg>
 
       {/* Gradient overlay for readability */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background/90 via-background/70 to-background" />
+      <div className="absolute inset-0 bg-linear-to-b from-background/90 via-background/70 to-background" />
     </div>
   );
 }

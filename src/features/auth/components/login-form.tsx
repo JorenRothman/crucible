@@ -1,13 +1,14 @@
 "use client";
 
+import { Loader2 } from "lucide-react";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { signIn } from "@/features/auth/client";
-import Link from "next/link";
-import { useRouter } from "next/navigation";
-import { useState } from "react";
 
 export function LoginForm() {
   const router = useRouter();
@@ -52,6 +53,8 @@ export function LoginForm() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
+              autoComplete="email"
+              aria-describedby={error ? "login-error" : undefined}
             />
           </div>
           <div className="space-y-2">
@@ -62,15 +65,31 @@ export function LoginForm() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
+              autoComplete="current-password"
+              aria-describedby={error ? "login-error" : undefined}
             />
           </div>
-          {error && <p className="text-sm text-red-600">{error}</p>}
+          {error && (
+            <p id="login-error" className="text-sm text-destructive" role="alert">
+              {error}
+            </p>
+          )}
           <Button type="submit" className="w-full" disabled={loading}>
-            {loading ? "Signing in..." : "Sign in"}
+            {loading ? (
+              <>
+                <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                Signing in...
+              </>
+            ) : (
+              "Sign in"
+            )}
           </Button>
-          <p className="text-center text-sm">
+          <p className="text-center text-sm text-muted-foreground">
             Don't have an account?{" "}
-            <Link href="/signup" className="underline">
+            <Link
+              href="/signup"
+              className="text-foreground font-medium hover:underline transition-colors"
+            >
               Sign up
             </Link>
           </p>

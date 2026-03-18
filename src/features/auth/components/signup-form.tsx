@@ -1,13 +1,14 @@
 "use client";
 
+import { Loader2 } from "lucide-react";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { signUp } from "@/features/auth/client";
-import Link from "next/link";
-import { useRouter } from "next/navigation";
-import { useState } from "react";
 
 export function SignUpForm() {
   const router = useRouter();
@@ -54,6 +55,8 @@ export function SignUpForm() {
               value={name}
               onChange={(e) => setName(e.target.value)}
               required
+              autoComplete="name"
+              aria-describedby={error ? "signup-error" : undefined}
             />
           </div>
           <div className="space-y-2">
@@ -65,6 +68,8 @@ export function SignUpForm() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
+              autoComplete="email"
+              aria-describedby={error ? "signup-error" : undefined}
             />
           </div>
           <div className="space-y-2">
@@ -76,15 +81,31 @@ export function SignUpForm() {
               onChange={(e) => setPassword(e.target.value)}
               required
               minLength={8}
+              autoComplete="new-password"
+              aria-describedby={error ? "signup-error" : undefined}
             />
           </div>
-          {error && <p className="text-sm text-red-600">{error}</p>}
+          {error && (
+            <p id="signup-error" className="text-sm text-destructive" role="alert">
+              {error}
+            </p>
+          )}
           <Button type="submit" className="w-full" disabled={loading}>
-            {loading ? "Signing up..." : "Sign up"}
+            {loading ? (
+              <>
+                <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                Signing up...
+              </>
+            ) : (
+              "Sign up"
+            )}
           </Button>
-          <p className="text-center text-sm">
+          <p className="text-center text-sm text-muted-foreground">
             Already have an account?{" "}
-            <Link href="/login" className="underline">
+            <Link
+              href="/login"
+              className="text-foreground font-medium hover:underline transition-colors"
+            >
               Sign in
             </Link>
           </p>

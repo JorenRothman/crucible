@@ -57,13 +57,13 @@ export default function Home() {
         <nav className="flex items-center gap-4">
           <Link
             href="/login"
-            className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+            className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-200"
           >
             Sign in
           </Link>
           <Link
             href="/signup"
-            className="text-sm px-4 py-2 rounded-full bg-foreground text-background hover:bg-foreground/90 transition-colors"
+            className="text-sm px-4 py-2 rounded-full bg-foreground text-background hover:bg-foreground/90 transition-all duration-200 hover:scale-105 active:scale-95"
           >
             Get started
           </Link>

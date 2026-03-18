@@ -1,8 +1,6 @@
 {
-  "$schema": "https://biomejs.dev/schemas/1.9.0/schema.json",
-  "organizeImports": {
-    "enabled": true
-  },
+  "$schema": "https://biomejs.dev/schemas/2.4.7/schema.json",
+  "assist": { "actions": { "source": { "organizeImports": "on" } } },
   "linter": {
     "enabled": true,
     "rules": {
@@ -11,10 +9,12 @@
         "noExplicitAny": "off"
       },
       "style": {
-        "useImportType": "off"
-      },
-      "nursery": {
+        "useImportType": "off",
         "noProcessEnv": "off"
+      },
+      "nursery": {},
+      "a11y": {
+        "noLabelWithoutControl": "off"
       }
     }
   },
@@ -29,6 +29,11 @@
       "quoteStyle": "double"
     }
   },
+  "css": {
+    "parser": {
+      "tailwindDirectives": true
+    }
+  },
   "vcs": {
     "enabled": true,
     "clientKind": "git",
@@ -36,10 +41,11 @@
   },
   "overrides": [
     {
-      "include": ["drizzle.config.ts"],
+      "includes": ["**/drizzle.config.ts"],
       "linter": {
         "rules": {
-          "nursery": {
+          "nursery": {},
+          "style": {
             "noProcessEnv": "off"
           }
         }

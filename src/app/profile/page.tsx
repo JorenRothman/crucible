@@ -1,9 +1,10 @@
+import { headers } from "next/headers";
+import Image from "next/image";
+import { redirect } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { auth } from "@/features/auth";
 import { requireAuth } from "@/features/auth/utils/auth";
-import { headers } from "next/headers";
-import { redirect } from "next/navigation";
 
 async function signOut() {
   "use server";
@@ -34,7 +35,13 @@ export default async function ProfilePage() {
           {session.user.image && (
             <div className="space-y-1">
               <p className="text-sm font-medium text-muted-foreground">Image</p>
-              <img src={session.user.image} alt="Profile" className="h-16 w-16 rounded-full" />
+              <Image
+                src={session.user.image}
+                alt="Profile"
+                width={64}
+                height={64}
+                className="rounded-full"
+              />
             </div>
           )}
           <form action={signOut}>

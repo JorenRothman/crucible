@@ -86,7 +86,7 @@ export default function Home() {
 
             <p className="text-xl text-muted-foreground max-w-xl mx-auto leading-relaxed">
               Production-ready Next.js starter with auth, database, and UI components built-in.
-              Focus on your product, not the boilerplate.
+              Focus on your project, not the boilerplate.
             </p>
           </div>
 

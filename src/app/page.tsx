@@ -1,10 +1,53 @@
 import { Flame, Shield, Zap } from "lucide-react";
 import Link from "next/link";
 
+function ForgeBackground() {
+  return (
+    <div className="fixed inset-0 -z-10 overflow-hidden">
+      <svg
+        className="absolute inset-0 w-full h-full"
+        viewBox="0 0 800 600"
+        preserveAspectRatio="xMidYMid slice"
+        role="img"
+        aria-label="Molten forge background"
+      >
+        <defs>
+          <linearGradient id="lava" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stopColor="#f97316" />
+            <stop offset="50%" stopColor="#ea580c" />
+            <stop offset="100%" stopColor="#7c2d12" />
+          </linearGradient>
+        </defs>
+
+        {/* Molten flow curves */}
+        <path
+          d="M-100 600 Q 200 400, 400 500 T 900 300 L 900 600 Z"
+          fill="url(#lava)"
+          opacity="0.5"
+        />
+        <path
+          d="M-100 500 Q 150 350, 350 450 T 900 200 L 900 600 Z"
+          fill="url(#lava)"
+          opacity="0.35"
+        />
+        <path
+          d="M-100 400 Q 300 300, 500 400 T 900 100 L 900 600 Z"
+          fill="url(#lava)"
+          opacity="0.25"
+        />
+      </svg>
+
+      {/* Gradient overlay for readability */}
+      <div className="absolute inset-0 bg-gradient-to-b from-background/90 via-background/70 to-background" />
+    </div>
+  );
+}
+
 export default function Home() {
   return (
     <div className="min-h-screen flex flex-col">
-      <header className="fixed top-0 left-0 right-0 z-50 px-6 py-4 flex items-center justify-between">
+      <ForgeBackground />
+      <header className="relative z-10 px-6 py-4 flex items-center justify-between">
         <div className="flex items-center gap-2">
           <div className="w-8 h-8 rounded-lg bg-linear-to-br from-orange-500 to-amber-600 flex items-center justify-center">
             <Flame className="w-4 h-4 text-white" />
@@ -27,7 +70,7 @@ export default function Home() {
         </nav>
       </header>
 
-      <main className="flex-1 flex items-center justify-center px-6">
+      <main className="relative z-10 flex-1 flex items-center justify-center px-6">
         <div className="max-w-3xl w-full text-center space-y-12">
           <div className="space-y-6">
             <h1 className="text-5xl md:text-7xl font-bold tracking-tight">

@@ -1,5 +1,5 @@
+import { Flame, Shield, Zap } from "lucide-react";
 import Link from "next/link";
-import { ArrowRight, Flame, Shield, Zap } from "lucide-react";
 
 export default function Home() {
   return (
@@ -30,38 +30,17 @@ export default function Home() {
       <main className="flex-1 flex items-center justify-center px-6">
         <div className="max-w-3xl w-full text-center space-y-12">
           <div className="space-y-6">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-muted text-muted-foreground text-xs font-medium">
-              <Zap className="w-3 h-3" />
-              <span>Forge your ideas</span>
-            </div>
-            
             <h1 className="text-5xl md:text-7xl font-bold tracking-tight">
               Build with{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-amber-500 to-orange-600">
                 intention
               </span>
             </h1>
-            
-            <p className="text-xl text-muted-foreground max-w-xl mx-auto leading-relaxed">
-              A refined platform for creating, testing, and iterating on your projects. 
-              Where ideas are forged into reality.
-            </p>
-          </div>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link
-              href="/signup"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-foreground text-background font-medium hover:bg-foreground/90 transition-all hover:scale-105"
-            >
-              Start building
-              <ArrowRight className="w-4 h-4" />
-            </Link>
-            <Link
-              href="/login"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-border text-foreground font-medium hover:bg-muted transition-colors"
-            >
-              Sign in
-            </Link>
+            <p className="text-xl text-muted-foreground max-w-xl mx-auto leading-relaxed">
+              A refined platform for creating, testing, and iterating on your projects. Where ideas
+              are forged into reality.
+            </p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-12 border-t border-border/50">
@@ -95,10 +74,6 @@ export default function Home() {
           </div>
         </div>
       </main>
-
-      <footer className="px-6 py-4 text-center text-sm text-muted-foreground">
-        <p>© {new Date().getFullYear()} Crucible. All rights reserved.</p>
-      </footer>
     </div>
   );
 }

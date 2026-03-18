@@ -65,7 +65,7 @@ export default function Home() {
             href="/signup"
             className="text-sm px-4 py-2 rounded-full bg-foreground text-background hover:bg-foreground/90 transition-all duration-200 hover:scale-105 active:scale-95"
           >
-            Get started
+            Start building free
           </Link>
         </nav>
       </header>
@@ -74,15 +74,19 @@ export default function Home() {
         <div className="max-w-3xl w-full text-center space-y-12">
           <div className="space-y-6">
             <h1 className="text-5xl md:text-7xl font-bold tracking-tight">
-              Build with{" "}
+              Ship your{" "}
               <span className="text-transparent bg-clip-text bg-linear-to-r from-orange-400 via-amber-500 to-orange-600">
-                intention
+                Next.js app
               </span>
             </h1>
 
+            <p className="text-xl md:text-2xl text-muted-foreground font-medium">
+              in hours, not weeks
+            </p>
+
             <p className="text-xl text-muted-foreground max-w-xl mx-auto leading-relaxed">
-              A refined platform for creating, testing, and iterating on your projects. Where ideas
-              are forged into reality.
+              Production-ready Next.js starter with auth, database, and UI components built-in.
+              Focus on your product, not the boilerplate.
             </p>
           </div>
 
@@ -91,27 +95,27 @@ export default function Home() {
               <div className="w-10 h-10 rounded-lg bg-orange-500/10 flex items-center justify-center mx-auto sm:mx-0">
                 <Zap className="w-5 h-5 text-orange-500" />
               </div>
-              <h3 className="font-medium">Lightning fast</h3>
+              <h3 className="font-medium">Production-ready from day one</h3>
               <p className="text-sm text-muted-foreground">
-                Built on cutting-edge technology for optimal performance
+                Auth, database, and best practices configured. No setup required.
               </p>
             </div>
             <div className="space-y-2 text-center sm:text-left">
               <div className="w-10 h-10 rounded-lg bg-amber-500/10 flex items-center justify-center mx-auto sm:mx-0">
                 <Shield className="w-5 h-5 text-amber-500" />
               </div>
-              <h3 className="font-medium">Secure by default</h3>
+              <h3 className="font-medium">Security handled</h3>
               <p className="text-sm text-muted-foreground">
-                Enterprise-grade authentication and data protection
+                Enterprise-grade auth with Better Auth. OWASP-compliant out of the box.
               </p>
             </div>
             <div className="space-y-2 text-center sm:text-left">
               <div className="w-10 h-10 rounded-lg bg-orange-600/10 flex items-center justify-center mx-auto sm:mx-0">
                 <Flame className="w-5 h-5 text-orange-600" />
               </div>
-              <h3 className="font-medium">Forge ahead</h3>
+              <h3 className="font-medium">Built for scale</h3>
               <p className="text-sm text-muted-foreground">
-                Tools designed to help you ship faster and better
+                Drizzle ORM, PostgreSQL, and a bulletproof architecture that grows with you.
               </p>
             </div>
           </div>

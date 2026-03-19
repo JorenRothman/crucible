@@ -9,7 +9,7 @@
 
 # If a $PNPM_DIRECTORY is set, run our PNPM commands in that directory
 if [ -n "$PNPM_DIRECTORY" ]; then
-  npx --dir "$PNPM_DIRECTORY" npm-check-updates -i -u "$@"
+  pnpx --dir "$PNPM_DIRECTORY" npm-check-updates -i -u "$@"
 else
-  npx npm-check-updates -i -u "$@"
+  pnpx npm-check-updates -i -u "$@"
 fi

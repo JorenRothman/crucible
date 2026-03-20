@@ -1,6 +1,6 @@
 # Crucible
 
-A modern web application built with Next.js 16, featuring authentication,
+A modern starter kit built with Next.js 16, featuring authentication,
 database integration, and a polished UI.
 
 ## Tech Stack

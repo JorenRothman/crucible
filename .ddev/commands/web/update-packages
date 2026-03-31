@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 ## Description: Interactively update packages with npm-check-updates
-## Usage: update-interactive [flags] [args]
-## Example: "ddev update-interactive"
+## Usage: update-packages [flags] [args]
+## Example: "ddev update-packages"
 ## ExecRaw: true
 ## HostWorkingDir: true
 ## MutagenSync: true

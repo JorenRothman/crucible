@@ -4,7 +4,7 @@ import { redirect } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { auth } from "@/features/auth";
-import { requireAuth } from "@/features/auth/utils/auth";
+import { isLoggedIn } from "@/features/auth/utils/auth";
 
 async function signOut() {
     "use server";
@@ -15,7 +15,7 @@ async function signOut() {
 }
 
 export default async function ProfilePage() {
-    const session = await requireAuth();
+    const session = await isLoggedIn();
 
     return (
         <div className="flex min-h-screen items-center justify-center">

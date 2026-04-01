@@ -4,5 +4,4 @@
 ## Usage: pgweb
 ## Example: ddev pgweb
 
-echo "Opening pgweb..."
-xdg-open "http://${DDEV_SITENAME}.ddev.site:8081" 2>/dev/null || open "http://${DDEV_SITENAME}.ddev.site:8081" 2>/dev/null || echo "Open manually: http://${DDEV_SITENAME}.ddev.site:8081"
+xdg-open "https://pgweb.${DDEV_SITENAME}.ddev.site" 2>/dev/null || open "https://pgweb.${DDEV_SITENAME}.ddev.site" 2>/dev/null || echo "Open manually: https://pgweb.${DDEV_SITENAME}.ddev.site"

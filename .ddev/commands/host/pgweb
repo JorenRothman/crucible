@@ -1,0 +1,8 @@
+#!/bin/bash
+
+## Description: Open pgweb database browser
+## Usage: pgweb
+## Example: ddev pgweb
+
+echo "Opening pgweb..."
+xdg-open "http://${DDEV_SITENAME}.ddev.site:8081" 2>/dev/null || open "http://${DDEV_SITENAME}.ddev.site:8081" 2>/dev/null || echo "Open manually: http://${DDEV_SITENAME}.ddev.site:8081"

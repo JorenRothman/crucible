@@ -1,0 +1,17 @@
+version: '3.6'
+
+services:
+  pgweb:
+    container_name: ddev-${DDEV_SITENAME}-pgweb
+    image: sosedoff/pgweb:latest
+    restart: no
+    environment:
+      - PGWEB_DATABASE_URL=postgres://db:db@db:5432/db?sslmode=disable
+    labels:
+      com.ddev.site-name: ${DDEV_SITENAME}
+      com.ddev.approot: ${DDEV_APPROOT}
+      com.ddev.port: 8081
+    ports:
+      - "8081:8081"
+    depends_on:
+      - db
